@@ -1,0 +1,155 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Stone Paper Services design system: minimal, airy, premium editorial publishing identity.
+   Primary brand color: #14A800; black #111111; white #FFFFFF; light gray #F7F7F7.
+   Headings: Poppins Bold; Body: Inter Regular.
+*/
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 113 100% 33%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 0 0% 97%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 0 0% 97%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 113 100% 33%;
+    --chart-1: 113 100% 33%;
+    --chart-2: 0 0% 7%;
+    --chart-3: 220 9% 46%;
+    --chart-4: 0 0% 97%;
+    --chart-5: 220 13% 91%;
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 113 100% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 97%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 113 100% 33%;
+    --success: 113 100% 33%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+    --gradient-primary: linear-gradient(135deg, #14A800 0%, #14A800 100%);
+    --gradient-card: linear-gradient(180deg, rgba(20, 168, 0, 0.06) 0%, rgba(255, 255, 255, 0) 100%);
+    --gradient-background: linear-gradient(180deg, #FFFFFF 0%, #F7F7F7 100%);
+    --shadow-card: 0 1px 3px rgba(17, 17, 17, 0.04);
+    --shadow-hover: 0 8px 24px rgba(17, 17, 17, 0.08);
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 113 100% 33%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 220 9% 60%;
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 113 100% 33%;
+    --chart-1: 113 100% 33%;
+    --chart-2: 0 0% 98%;
+    --chart-3: 220 9% 60%;
+    --chart-4: 0 0% 14%;
+    --chart-5: 0 0% 18%;
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 113 100% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 113 100% 33%;
+    --success: 113 100% 33%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+    --gradient-primary: linear-gradient(135deg, #14A800 0%, #14A800 100%);
+    --gradient-card: linear-gradient(180deg, rgba(20, 168, 0, 0.08) 0%, rgba(17, 17, 17, 0) 100%);
+    --gradient-background: linear-gradient(180deg, #111111 0%, #0A0A0A 100%);
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Mobile-only optimizations: scale typography, tighten spacing, and reduce
+   button/card sizes below the md breakpoint (768px). Desktop remains unchanged. */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  button,
+  [type="button"],
+  [type="submit"],
+  [role="button"] {
+    min-height: 2.25rem;
+  }
+}
